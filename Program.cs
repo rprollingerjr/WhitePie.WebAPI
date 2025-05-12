@@ -5,7 +5,8 @@ using WhitePie.WebAPI.Services;
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://+:80");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 // Add services
 builder.Services.Configure<MongoDbSettings>(
