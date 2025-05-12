@@ -42,13 +42,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-app.UseCors(MyAllowSpecificOrigins);
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseRouting();
+app.UseCors(MyAllowSpecificOrigins);
+
 
 app.UseAuthorization();
 app.MapControllers();
