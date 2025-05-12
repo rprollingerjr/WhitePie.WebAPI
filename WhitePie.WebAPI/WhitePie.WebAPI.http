@@ -1,0 +1,6 @@
+@WhitePie.WebAPI_HostAddress = http://localhost:5266
+
+GET {{WhitePie.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
