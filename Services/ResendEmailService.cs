@@ -24,7 +24,7 @@ public class ResendEmailService
         var resp = await resend.EmailSendAsync(new EmailMessage()
         {
             From = "EdibleMami <management@ediblemami.com>",
-            To = _config["SendToEmail"],
+            To = _config["Resend:SendToEmail"],
             Subject = subject,
             HtmlBody = html,
         });
