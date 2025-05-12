@@ -29,8 +29,8 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.WithOrigins(
-                    "https://ediblemami.com",
-                    "https://uploader.ediblemami.com") // Add other domains as needed
+                    "https://www.ediblemami.com",
+                    "https://admin.ediblemami.com") // Add other domains as needed
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
