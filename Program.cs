@@ -5,6 +5,8 @@ using WhitePie.WebAPI.Services;
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://+:80");
+
 // Add services
 builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("MongoDbSettings"));
@@ -49,5 +51,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 app.MapControllers();
+app.MapGet("/", () => "API is alive!");
+
 app.Run();
 
